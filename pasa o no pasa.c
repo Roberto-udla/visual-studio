@@ -41,8 +41,6 @@ int main() {
     return 0;
 }
 
-// ----------------------------------------------------------------------------------------------------------------------
-
 /**
  * @brief Solicita al usuario las calificaciones y valida que estén en el rango de 0 a 10.
  * * @param calificaciones La matriz donde se almacenarán las notas.
@@ -76,8 +74,6 @@ void ingresar_calificaciones(float calificaciones[NUM_ESTUDIANTES][NUM_ASIGNATUR
     }
 }
 
-// ----------------------------------------------------------------------------------------------------------------------
-
 /**
  * @brief Calcula y muestra el promedio de calificaciones para cada estudiante.
  * * @param calificaciones La matriz con las notas.
@@ -98,8 +94,6 @@ void calcular_promedio_estudiante(float calificaciones[NUM_ESTUDIANTES][NUM_ASIG
     }
 }
 
-// ----------------------------------------------------------------------------------------------------------------------
-
 /**
  * @brief Calcula y muestra el promedio de calificaciones por asignatura.
  * * @param calificaciones La matriz con las notas.
@@ -119,8 +113,6 @@ void calcular_promedio_asignatura(float calificaciones[NUM_ESTUDIANTES][NUM_ASIG
         printf("Asignatura %d: %.2f\n", j + 1, promedio);
     }
 }
-
-// ----------------------------------------------------------------------------------------------------------------------
 
 /**
  * @brief Encuentra y muestra la calificación más alta y más baja por estudiante y por asignatura.
@@ -165,8 +157,6 @@ void encontrar_calificaciones_extremas(float calificaciones[NUM_ESTUDIANTES][NUM
         printf("Asignatura %d: Maxima = %.2f, Minima = %.2f\n", j + 1, max_asignatura, min_asignatura);
     }
 }
-
-// ----------------------------------------------------------------------------------------------------------------------
 
 /**
  * @brief Determina y muestra cuántos estudiantes aprobaron o reprobaron cada asignatura.
