@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include "funciones.h"
+#include <ctype.h>
+#include <stdlib.h>
 
-void ingresarProductos(char nombres[MAX][50], float precios[MAX], int cantidad) {
+void ingresarProductos(char nombres[MAX][50], float precios[MAX], int cantidad)
+{
     int i;
     for (i = 0; i < cantidad; i++) {
         printf("Ingrese el nombre del producto %d: ", i + 1);
@@ -11,10 +14,26 @@ void ingresarProductos(char nombres[MAX][50], float precios[MAX], int cantidad) 
 
         // Elimina salto de línea
         nombres[i][strcspn(nombres[i], "\n")] = '\0';
-
+        if(isalpha(nombres[i][0])) {
+            printf("");
+        } else {
+            printf("Nombre invalido.\n");
+            i--; // Decrementa i para repetir la entrada
+            continue;
+        }
+        for(int j=0; j<cantidad; j++){
         printf("Ingrese el precio del producto %d: ", i + 1);
         scanf("%f", &precios[i]);
         fflush(stdin);
+        if(isdigit(precios[i])) {
+            printf("");
+        } else {
+            printf("Precio invalido.\n");
+            j--; // Decrementa j para repetir la entrada
+            continue;
+        }    
+        }
+        
     }
 }
 
@@ -54,6 +73,7 @@ int buscarProducto(char nombres[MAX][50], float precios[MAX], int cantidad, char
             return i;
     return -1;
 }
+
 #include <stdio.h>
 #include <string.h>
 #include "funciones.h"
@@ -133,4 +153,7 @@ int main() {
     } while (opcion != 6);
 
     return 0;
+}
+
+void ValidarPrecio() {
 }
